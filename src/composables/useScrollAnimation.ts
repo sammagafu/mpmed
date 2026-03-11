@@ -9,8 +9,9 @@ export function useScrollAnimation(
 
   function setupObserver(el: HTMLElement) {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) isInView.value = true
+      (entries) => {
+        const entry = entries[0]
+        if (entry && entry.isIntersecting) isInView.value = true
       },
       { threshold, rootMargin }
     )

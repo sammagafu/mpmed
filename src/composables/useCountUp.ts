@@ -35,8 +35,9 @@ export function useCountUp(
       return
     }
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) animate()
+      (entries) => {
+        const entry = entries[0]
+        if (entry && entry.isIntersecting) animate()
       },
       { threshold: 0.3, rootMargin }
     )
