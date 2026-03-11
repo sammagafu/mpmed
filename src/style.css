@@ -4,6 +4,9 @@
    ====================================================================== */
 
 :root {
+  /* Golden ratio for type & spacing */
+  --ratio: 1.618;
+
   --font-body: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -15,25 +18,25 @@
   --text-2xl: 1.5rem;
   --text-3xl: 1.875rem;
 
-  --line-height-body: 1.6;
-  --line-height-heading: 1.2;
+  --line-height-body: var(--ratio);
+  --line-height-heading: 1.18;
 
-  /* Brand palette (new core) */
+  /* Brand palette (new core, slightly more playful) */
   --color-primary: #0d3b66;
   --color-primary-dark: #082847;
-  --color-accent: #1a7f5e;
-  --color-bg: #f5f7fb;
+  --color-accent: #1fb78b;
+  --color-bg: #f4f7ff;
   --color-surface: #ffffff;
-  --color-surface-alt: #edf1f7;
+  --color-surface-alt: #eef3ff;
   --color-text: #1a2b3c;
-  --color-text-muted: #5c6b7a;
+  --color-text-muted: #4b5b6b;
   --color-border-subtle: rgba(13, 59, 102, 0.09);
 
   /* Legacy aliases so existing section styles still work */
   --mpmed-primary: var(--color-primary);
   --mpmed-primary-dark: var(--color-primary-dark);
   --mpmed-accent: var(--color-accent);
-  --mpmed-accent-hover: #156b4d;
+  --mpmed-accent-hover: #18a179;
   --mpmed-bg-white: var(--color-surface);
   --mpmed-bg: var(--color-bg);
   --mpmed-text: var(--color-text);
@@ -98,6 +101,13 @@ a {
 
 a:hover {
   color: #156b4d;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 183, 139, 0.4);
 }
 
 ::selection {
@@ -174,19 +184,6 @@ h6 {
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.section-label {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-pill);
-  background: rgba(26, 127, 94, 0.09);
-  color: var(--color-accent);
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
 }
 
 .section-title {
@@ -621,27 +618,26 @@ section:first-of-type {
 }
 .section-icon i { font-size: inherit; }
 .section-label {
-  display: inline-block;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--mpmed-accent);
-  margin-bottom: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  background: rgba(26, 127, 94, 0.08);
-  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  margin-bottom: 0.85rem;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(13, 59, 102, 0.08);
 }
 .section-label::after {
   content: '';
-  display: block;
-  width: 2rem;
-  height: 2px;
-  background: linear-gradient(90deg, var(--mpmed-accent), var(--mpmed-primary));
-  border-radius: 1px;
-  margin-top: 0.75rem;
-  margin-left: auto;
-  margin-right: auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-accent);
 }
 .section-title {
   font-size: clamp(1.75rem, 4vw, 2.75rem);
@@ -660,7 +656,7 @@ section:first-of-type {
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.65;
+  line-height: calc(1 + (var(--ratio) / 2));
 }
 /* Card hierarchy (ref: ProHealth/Talento): icon → title → one line copy → single CTA */
 
@@ -803,4 +799,57 @@ section:first-of-type {
   .bento-grid--hub .card:nth-child(4),
   .bento-grid--hub .card:nth-child(5),
   .bento-grid--hub .card:nth-child(6) { grid-column: span 4; }
+}
+
+/* Generic number / metrics section -------------------------------------- */
+
+.key-metrics {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .key-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.key-metrics__item {
+  padding: 1.2rem 1.3rem;
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow: 0 12px 32px rgba(10, 37, 64, 0.12);
+  border: 1px solid var(--color-border-subtle);
+  text-align: left;
+}
+
+.key-metrics__value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+}
+
+.key-metrics__label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.key-metrics__pill {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: rgba(13, 59, 102, 0.06);
 }

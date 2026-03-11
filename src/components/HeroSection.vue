@@ -81,7 +81,7 @@ const { count: countHa } = useCountUp(600, { duration: 2200, startOnView: true, 
   position: relative;
   padding: clamp(3rem, 7vw, 4.5rem) 0 clamp(2.75rem, 5vw, 3.5rem);
   color: var(--color-text);
-  background: radial-gradient(circle at top left, #e0ecff 0, #f5f7fb 40%, #f5f7fb 100%);
+  background: radial-gradient(circle at top left, rgba(31, 183, 139, 0.18) 0, #e0ecff 26%, #f5f7ff 52%, #f5f7ff 100%);
   overflow: hidden;
 }
 .hero__bg {
@@ -209,6 +209,12 @@ const { count: countHa } = useCountUp(600, { duration: 2200, startOnView: true, 
   box-shadow: 0 10px 26px rgba(10, 37, 64, 0.16);
   border: 1px solid rgba(13, 59, 102, 0.06);
 }
+.hero__stats .hero-stat:nth-child(2) {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+  border-color: transparent;
+  box-shadow: 0 14px 34px rgba(10, 37, 64, 0.28);
+  color: #ffffff;
+}
 .hero-stat__value {
   display: block;
   font-size: 1.5rem;
@@ -216,6 +222,9 @@ const { count: countHa } = useCountUp(600, { duration: 2200, startOnView: true, 
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
   color: var(--color-primary);
+}
+.hero__stats .hero-stat:nth-child(2) .hero-stat__value {
+  color: #ffffff;
 }
 .hero-stat__suffix {
   opacity: 0.9;
@@ -226,6 +235,9 @@ const { count: countHa } = useCountUp(600, { duration: 2200, startOnView: true, 
   font-size: 0.8rem;
   color: var(--color-text-muted);
   margin-top: 0.2rem;
+}
+.hero__stats .hero-stat:nth-child(2) .hero-stat__label {
+  color: rgba(255, 255, 255, 0.86);
 }
 
 /* Quick nav strip */

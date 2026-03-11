@@ -131,7 +131,7 @@
   transition: background 0.2s ease, transform 0.15s ease;
 }
 .site-footer__cta:hover {
-  background: #156b4d;
+  background: var(--mpmed-accent-hover);
   color: #fff !important;
   transform: translateY(-1px);
 }

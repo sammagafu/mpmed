@@ -207,9 +207,9 @@ function handleSubmit() {
 .inquiry-form {
   border-radius: 18px;
   padding: 1.75rem 1.5rem 1.9rem;
-  background: #ffffff;
+  background: var(--color-surface);
   box-shadow: 0 18px 48px rgba(10, 37, 64, 0.14);
-  border: 1px solid rgba(13, 59, 102, 0.08);
+  border: 1px solid var(--color-border-subtle);
 }
 
 .inquiry-form__section-title {
@@ -260,7 +260,7 @@ function handleSubmit() {
 }
 
 .inquiry-card--location .inquiry-card__icon {
-  background: linear-gradient(135deg, #1a7f5e, #0d3b66);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
 }
 
 .inquiry-card--email .inquiry-card__icon {

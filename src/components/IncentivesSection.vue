@@ -137,7 +137,7 @@ function scrollTo(id: string) {
 
 .incentive-card {
   border-radius: 18px;
-  background: #ffffff;
+  background: var(--color-surface);
   box-shadow: 0 16px 40px rgba(10, 37, 64, 0.1);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
@@ -164,8 +164,8 @@ function scrollTo(id: string) {
   color: #fff;
 }
 
-.incentive-card--accent .incentive-card__icon { background: linear-gradient(135deg, #1a7f5e, #0d3b66); }
-.incentive-card--primary .incentive-card__icon { background: linear-gradient(135deg, #0d3b66, #082847); }
+.incentive-card--accent .incentive-card__icon { background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); }
+.incentive-card--primary .incentive-card__icon { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); }
 .incentive-card--warm .incentive-card__icon { background: linear-gradient(135deg, #c49345, #8a5d15); }
 .incentive-card--muted .incentive-card__icon { background: linear-gradient(135deg, #5c6b7a, #1a2b3c); }
 

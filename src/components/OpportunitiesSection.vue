@@ -171,7 +171,7 @@ function scrollTo(id: string) {
   color: #fff;
 }
 
-.opportunity-card--accent .opportunity-card__icon { background: linear-gradient(135deg, #1a7f5e, #0d3b66); }
+.opportunity-card--accent .opportunity-card__icon { background: linear-gradient(135deg, #1fb78b, #0d3b66); }
 .opportunity-card--primary .opportunity-card__icon { background: linear-gradient(135deg, #0d3b66, #082847); }
 .opportunity-card--warm .opportunity-card__icon { background: linear-gradient(135deg, #c49345, #8a5d15); }
 .opportunity-card--muted .opportunity-card__icon { background: linear-gradient(135deg, #5c6b7a, #1a2b3c); }
@@ -244,11 +244,11 @@ function scrollTo(id: string) {
   width: 1.35rem;
   height: 1.35rem;
   border-radius: 999px;
-  background: rgba(26, 127, 94, 0.08);
+  background: rgba(31, 183, 139, 0.12);
 }
 
 .opportunity-card__cta:hover .opportunity-card__cta-icon {
-  background: rgba(26, 127, 94, 0.16);
+  background: rgba(31, 183, 139, 0.22);
 }
 
 @media (max-width: 575px) {
